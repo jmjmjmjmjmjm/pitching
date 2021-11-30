@@ -2,8 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vetween/controller/home_controller.dart';
+import 'package:vetween/models/relay_model.dart';
+import 'package:vetween/util/home_shop_item.dart';
 
-class HomeShop extends StatelessWidget {
+class HomeShop extends GetView<HomeController> {
   const HomeShop({Key? key}) : super(key: key);
 
   @override
@@ -17,9 +21,13 @@ class HomeShop extends StatelessWidget {
             '블프! 피칭MD 장바구니 구경하기',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          boxItem(),
-          boxItem(),
-          boxItem(),
+          ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) =>
+                boxItem(controller.shopData[index]),
+            itemCount: controller.shopData.length,
+          ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -35,35 +43,4 @@ class HomeShop extends StatelessWidget {
     );
   }
 
-  boxItem() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8, bottom: 8),
-      child: Row(
-        children: [
-          Container(
-            height: 180,
-            width: 180,
-            color: Colors.blue,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  color: Colors.orange,
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.only(right: 10, left: 10, top: 8, bottom: 8),
-                    child: Center(child: Text('피칭 MD`s Pick!')),
-                  ),
-                ),
-                Container(width: 180, child: const Text('[버디나인] 코끼리 파워뱅크')),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
 }

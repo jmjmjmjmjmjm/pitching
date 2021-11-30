@@ -15,20 +15,20 @@ class HomeMenu extends StatelessWidget {
             Container(
               width: 240,
               height: 40,
-              color: Colors.black,
               margin: EdgeInsets.only(right: 20),
+              child: Center(child: Text('실시간 블프 랭킹')),
             ),
             Container(
               width: 240,
               height: 40,
-              color: Colors.black,
               margin: EdgeInsets.only(right: 20),
+              child: Center(child: Text('반값 릴레이')),
             ),
             Container(
               width: 240,
               height: 40,
-              color: Colors.black,
               margin: EdgeInsets.only(right: 20),
+              child: Center(child: Text('블랙프라이데이')),
             ),
           ],
         ),

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vetween/controller/home_controller.dart';
 
-class HomeCoupon extends StatelessWidget {
+class HomeCoupon extends GetView<HomeController> {
   const HomeCoupon({Key? key}) : super(key: key);
 
   @override
@@ -18,25 +20,9 @@ class HomeCoupon extends StatelessWidget {
         ),
         Ink(
           height: 200,
-          child: PageView(
-            children: [
-              Container(
-                width: 200,
-                color: Colors.black,
-              ),
-              Container(
-                width: 200,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 200,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 200,
-                color: Colors.black,
-              )
-            ],
+          child: PageView.builder(
+            itemBuilder: (context, index) => Image.network(controller.coupondata[index].url ??= ''),
+            itemCount: controller.coupondata.length,
           ),
         ),
       ],

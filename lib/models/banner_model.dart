@@ -1,18 +1,18 @@
-class ImgModel {
+class BannerModel {
   String? url;
   String? title;
   String? beforePrice;
   String? discount;
   String? afterPrice;
 
-  ImgModel({
+  BannerModel({
     this.url,
     this.title,
     this.beforePrice,
     this.discount,
     this.afterPrice,
   });
-  factory ImgModel.fromJson(Map<String, dynamic> json) => ImgModel(
+  factory BannerModel.fromJson(Map<String, dynamic> json) => BannerModel(
         url: json['url'],
         title: json['title'],
         beforePrice: json['beforePrice'],

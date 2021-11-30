@@ -18,7 +18,7 @@ class HomePageView extends GetView<HomeController> {
             onPageChanged: (value) => controller.pageIndex.value = value *1.0,
             allowImplicitScrolling: true,
             itemBuilder: (context, index) => Image.network(
-              controller.bannerData[index]['url'],
+              controller.bannerData[index].url ?? '',
               fit: BoxFit.fill,
               width: 200,
               height: 500,
