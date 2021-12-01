@@ -4,6 +4,7 @@ TabBar tabBar() {
   return const TabBar(
     isScrollable: true,
     labelColor: Colors.black,
+    indicatorColor: Colors.black,
     labelStyle: TextStyle(fontWeight: FontWeight.bold),
     unselectedLabelColor: Colors.grey,
     tabs: [

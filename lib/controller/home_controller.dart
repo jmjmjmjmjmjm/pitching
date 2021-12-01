@@ -20,6 +20,7 @@ class HomeController extends GetxController {
   List<RelayModel> relayData = HomeDatas.relayData; // 반값 릴레이
   List<CouponModel> coupondata = HomeDatas.couponData; // 쿠폰
   List<RelayModel> shopData = HomeDatas.shopData; // 장바구니 구경하기
+  List<RelayModel> rankData = HomeDatas.rankDataTent; // 랭크 데이터 _텐트
 
 
 }

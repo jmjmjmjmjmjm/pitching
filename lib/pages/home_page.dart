@@ -72,7 +72,7 @@ class HomePage extends GetView<HomeController> {
                 HomeHalfRelay(),
                 HomeCoupon(),
                 HomeShop(),
-                HomeRank()
+                HomeRank(),
               ],
             ),
           ),

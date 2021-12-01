@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vetween/controller/home_controller.dart';
+import 'package:vetween/models/relay_model.dart';
+import 'package:vetween/util/home_rank_item.dart';
 import 'package:vetween/util/home_tab.dart';
 
 class HomeRank extends GetView<HomeController> {
@@ -21,38 +23,30 @@ class HomeRank extends GetView<HomeController> {
         ),
         tabBar(),
         Ink(
-          height: 500,
+          height: 580,
           child: TabBarView(
             children: [
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
-              buildGridView(),
+              buildGridView(controller.rankData),
+              buildGridView(controller.relayData),
+              buildGridView(controller.rankData),
+              buildGridView(controller.relayData),
+              buildGridView(controller.rankData),
+              buildGridView(controller.relayData),
+              buildGridView(controller.rankData),
+              buildGridView(controller.relayData),
+              buildGridView(controller.rankData),
             ],
           ),
-        )
-      ],
-    );
-  }
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('더 둘러보기', style: TextStyle(fontSize: 20)),
+            Icon(Icons.arrow_forward_ios_rounded),
+          ],
+        ),
 
-  buildGridView() {
-    return GridView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-      ),
-      itemCount: 4,
-      shrinkWrap: true,
-      itemBuilder: (context, index) => Container(
-        height: 300,
-        width: 150,
-        color: Colors.black,
-      ),
+      ],
     );
   }
 }
